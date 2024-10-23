@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# APY Calculator
+
+[![Tests](https://github.com/AndreMiras/apy-calculator/actions/workflows/tests.yml/badge.svg)](https://github.com/AndreMiras/apy-calculator/actions/workflows/tests.yml)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
