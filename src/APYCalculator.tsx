@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { APYParams } from "./types";
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import {
   Select,
@@ -11,12 +12,26 @@ import { Input } from "./components/ui/input";
 import { Label } from "./components/ui/label";
 import { calculateRates, CompoundFrequency } from "./lib/utils";
 
-const APYCalculator = () => {
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [startBalance, setStartBalance] = useState("");
-  const [endBalance, setEndBalance] = useState("");
-  const [compound, setCompound] = useState<CompoundFrequency>("daily");
+type APYCalculatorProps = APYParams & {
+  setStartDate: (date: string) => void;
+  setEndDate: (date: string) => void;
+  setStartBalance: (balance: number) => void;
+  setEndBalance: (balance: number) => void;
+  setCompound: (frequency: APYParams["compound"]) => void;
+};
+
+const APYCalculator = ({
+  startDate,
+  setStartDate,
+  endDate,
+  setEndDate,
+  startBalance,
+  setStartBalance,
+  endBalance,
+  setEndBalance,
+  compound,
+  setCompound,
+}: APYCalculatorProps) => {
   const [results, setResults] = useState({ apr: 0, apy: 0, daysElapsed: 0 });
 
   const handleCalculateRates = () => {
@@ -66,7 +81,7 @@ const APYCalculator = () => {
               id="startBalance"
               type="number"
               value={startBalance}
-              onChange={(e) => setStartBalance(e.target.value)}
+              onChange={(e) => setStartBalance(Number(e.target.value))}
               placeholder="0.00"
             />
           </div>
@@ -76,7 +91,7 @@ const APYCalculator = () => {
               id="endBalance"
               type="number"
               value={endBalance}
-              onChange={(e) => setEndBalance(e.target.value)}
+              onChange={(e) => setEndBalance(Number(e.target.value))}
               placeholder="0.00"
             />
           </div>

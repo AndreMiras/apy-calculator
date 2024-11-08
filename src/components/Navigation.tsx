@@ -1,4 +1,15 @@
-const Navigation = () => (
+import ShareLink from "./ShareLink";
+import { APYParams } from "../types";
+
+type NavigationProps = APYParams;
+
+const Navigation = ({
+  startDate,
+  endDate,
+  startBalance,
+  endBalance,
+  compound,
+}: NavigationProps) => (
   <nav className="border-b">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between h-16">
@@ -15,12 +26,13 @@ const Navigation = () => (
             >
               Home
             </a>
-            <a
-              href="/"
-              className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-            >
-              Share
-            </a>
+            <ShareLink
+              startDate={startDate}
+              endDate={endDate}
+              startBalance={startBalance}
+              endBalance={endBalance}
+              compound={compound}
+            />
           </div>
         </div>
         <div className="flex items-center">

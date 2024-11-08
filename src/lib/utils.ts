@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const COMPOUND_FREQUENCIES = {
+export const COMPOUND_FREQUENCIES = {
   daily: 365,
   monthly: 12,
   annually: 1,
@@ -17,25 +17,21 @@ export type CompoundFrequency = keyof typeof COMPOUND_FREQUENCIES;
 export const calculateRates = (
   startDate: string,
   endDate: string,
-  startBalance: string,
-  endBalance: string,
+  startBalance: number,
+  endBalance: number,
   compound: CompoundFrequency,
 ) => {
   const start = new Date(startDate).getTime();
   const end = new Date(endDate).getTime();
   const daysElapsed = (end - start) / (1000 * 60 * 60 * 24);
-  const startBalanceNumber = parseFloat(startBalance);
-  const endBalanceNumber = parseFloat(endBalance);
 
-  if (!startBalanceNumber || !endBalanceNumber || daysElapsed <= 0) {
+  if (!startBalance || !endBalance || daysElapsed <= 0) {
     return { apr: 0, apy: 0, daysElapsed: 0 };
   }
 
   // Calculate simple interest rate (APR)
   const apr =
-    ((endBalanceNumber - startBalanceNumber) / startBalanceNumber) *
-    (365 / daysElapsed) *
-    100;
+    ((endBalance - startBalance) / startBalance) * (365 / daysElapsed) * 100;
 
   const compoundFrequency = COMPOUND_FREQUENCIES[compound];
   // Calculate APY
