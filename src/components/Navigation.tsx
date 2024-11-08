@@ -1,5 +1,5 @@
-import ShareLink from "./ShareLink";
 import { APYParams } from "../types";
+import ShareLink from "./ShareLink";
 
 type NavigationProps = APYParams;
 

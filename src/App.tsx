@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+
 import APYCalculator from "./APYCalculator";
-import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import Navigation from "./components/Navigation";
 import { COMPOUND_FREQUENCIES, CompoundFrequency } from "./lib/utils";
 
 const App = () => {

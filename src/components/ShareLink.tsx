@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import { APYParams } from "../types";
 
 type ShareLinkProps = APYParams;

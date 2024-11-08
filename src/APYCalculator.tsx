@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { APYParams } from "./types";
+
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
+import { Input } from "./components/ui/input";
+import { Label } from "./components/ui/label";
 import {
   Select,
   SelectContent,
@@ -8,9 +10,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./components/ui/select";
-import { Input } from "./components/ui/input";
-import { Label } from "./components/ui/label";
 import { calculateRates, CompoundFrequency } from "./lib/utils";
+import { APYParams } from "./types";
 
 type APYCalculatorProps = APYParams & {
   setStartDate: (date: string) => void;
