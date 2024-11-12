@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/apy-calculator/static/css/main.45f50768.css",
-    "main.js": "/apy-calculator/static/js/main.9ffd41dc.js",
+    "main.js": "/apy-calculator/static/js/main.f7aeec30.js",
     "static/js/453.f67b100a.chunk.js": "/apy-calculator/static/js/453.f67b100a.chunk.js",
     "index.html": "/apy-calculator/index.html",
     "main.45f50768.css.map": "/apy-calculator/static/css/main.45f50768.css.map",
-    "main.9ffd41dc.js.map": "/apy-calculator/static/js/main.9ffd41dc.js.map",
+    "main.f7aeec30.js.map": "/apy-calculator/static/js/main.f7aeec30.js.map",
     "453.f67b100a.chunk.js.map": "/apy-calculator/static/js/453.f67b100a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.45f50768.css",
-    "static/js/main.9ffd41dc.js"
+    "static/js/main.f7aeec30.js"
   ]
 }
