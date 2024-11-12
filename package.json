@@ -1,6 +1,6 @@
 {
   "name": "apy-calculator",
-  "homepage": "https://AndreMiras.github.io/apy-calculator",
+  "homepage": "https://AndreMiras.github.io/apy-calculator/",
   "version": "0.1.0",
   "dependencies": {
     "@radix-ui/react-label": "^2.1.0",

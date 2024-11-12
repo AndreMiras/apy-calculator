@@ -1,5 +1,6 @@
 import { Calculator, Home, Info, Share } from "lucide-react";
 
+import packageJson from "../../package.json";
 import { APYParams } from "../types";
 import ShareLink from "./ShareLink";
 
@@ -17,14 +18,17 @@ const Navigation = ({
       <div className="flex justify-between h-16">
         <div className="flex">
           <div className="flex-shrink-0 flex items-center">
-            <span className="text-xl font-bold text-blue-600">
+            <a
+              href={packageJson.homepage}
+              className="text-xl font-bold text-blue-600"
+            >
               <Calculator className="inline-block h-5 w-5 mr-1" />
               APY Calculator
-            </span>
+            </a>
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
             <a
-              href="/"
+              href={packageJson.homepage}
               className="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
             >
               <Home className="h-5 w-5 mr-1" />
